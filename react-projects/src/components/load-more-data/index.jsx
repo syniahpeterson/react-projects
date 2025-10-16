@@ -44,6 +44,7 @@ const LoadMoreData = () => {
 
   return (
     <div className="load-more-container">
+      <h2 className="gallery-header">Product Gallery</h2>
       <div className="product-container">
         {products && products.length
           ? products.map((item, index) => (

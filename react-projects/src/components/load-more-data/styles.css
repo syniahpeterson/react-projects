@@ -8,6 +8,12 @@
   padding: 1rem;
 }
 
+.gallery-header {
+  text-align: center;
+  color: #fff;
+  margin: 0 0 1rem 0;
+}
+
 .product-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
