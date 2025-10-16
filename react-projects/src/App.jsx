@@ -4,6 +4,7 @@ import Accordion from "./components/accordion";
 import RandomColor from "./components/random-color";
 import StarRating from "./components/star-rating";
 import ImageSlider from "./components/image-slider";
+import LoadMoreData from "./components/load-more-data";
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
           page={"1"}
           limit={"10"}
         />
+      </section>
+      <div className="divider"></div>
+      <section id="load-more-data">
+        {/* Load More Data */}
+        <LoadMoreData />
       </section>
       <div className="divider"></div>
     </div>
