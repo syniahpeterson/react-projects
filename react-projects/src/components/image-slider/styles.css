@@ -1,0 +1,131 @@
+.image-slider-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.slider-header {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  flex: 1;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 3rem;
+}
+
+/* For error/loading states without arrows */
+.slider-container:has(.slider-message) {
+  padding: 0;
+  justify-content: center;
+}
+
+.slider-message {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+.loading-message {
+  background: rgba(0, 123, 255, 0.2);
+  border: 1px solid rgba(0, 123, 255, 0.5);
+}
+
+.current-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 7px #666;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.arrow {
+  position: absolute;
+  width: clamp(1.5rem, 4vw, 2.5rem);
+  height: clamp(1.5rem, 4vw, 2.5rem);
+  color: #fff;
+  filter: drop-shadow(0px 0px 5px #555);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+
+.circle-indicators {
+  display: flex;
+  position: absolute;
+  bottom: clamp(0.5rem, 2vw, 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 0.3rem;
+  z-index: 10;
+}
+
+.current-indicator {
+  background-color: #ffffff;
+  height: clamp(10px, 2.5vw, 15px);
+  width: clamp(10px, 2.5vw, 15px);
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.current-indicator:hover {
+  transform: scale(1.2);
+}
+
+.hide-current-image {
+  display: none;
+}
+
+.inactive-indicator {
+  background-color: gray;
+}
