@@ -5,6 +5,8 @@ import RandomColor from "./components/random-color";
 import StarRating from "./components/star-rating";
 import ImageSlider from "./components/image-slider";
 import LoadMoreData from "./components/load-more-data";
+import TreeView from "./components/tree-view";
+import { menus } from "./components/tree-view/data";
 
 function App() {
   return (
@@ -37,6 +39,11 @@ function App() {
       <section id="load-more-data">
         {/* Load More Data */}
         <LoadMoreData />
+      </section>
+      <div className="divider"></div>
+      <section id="tree-view">
+        {/* Tree View Component */}
+        <TreeView menus={menus} />
       </section>
       <div className="divider"></div>
     </div>

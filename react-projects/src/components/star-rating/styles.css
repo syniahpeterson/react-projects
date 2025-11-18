@@ -1,7 +1,7 @@
 .active {
-  color: #fff700;
+  color: #6461ad;
 }
 
 .inactive {
-  color: #000000;
+  color: rgba(100, 97, 173, 0.3);
 }

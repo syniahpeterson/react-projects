@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import "./styles.css";
 
+// Image Slider - API-powered carousel with navigation and error handling
 export default function ImageSlider({ url, limit = 5, page = 1 }) {
   const [images, setImages] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [errorMsg, setErrorMsg] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // Fetch images with pagination
   async function fetchImages(getUrl) {
     try {
       setLoading(true);
-
       const response = await fetch(`${getUrl}?page=${page}&limit=${limit}`);
       const data = await response.json();
 
@@ -25,10 +26,12 @@ export default function ImageSlider({ url, limit = 5, page = 1 }) {
     }
   }
 
+  // Navigate to previous slide with wrap-around
   function handlePrevious() {
     setCurrentSlide(currentSlide === 0 ? images.length - 1 : currentSlide - 1);
   }
 
+  // Navigate to next slide with wrap-around
   function handleNext() {
     setCurrentSlide(currentSlide === images.length - 1 ? 0 : currentSlide + 1);
   }
@@ -64,7 +67,6 @@ export default function ImageSlider({ url, limit = 5, page = 1 }) {
       </div>
     );
   }
-
   return (
     <div className="image-slider-wrapper">
       <h2 className="slider-header">Image Slider</h2>

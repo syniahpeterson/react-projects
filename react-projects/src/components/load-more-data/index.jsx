@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
 
+// Load More Data - Progressive product loading with pagination
 const LoadMoreData = () => {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
   const [disableButton, setDisableButton] = useState(false);
 
+  // Fetch products with pagination (skip = count * 20)
   const fetchProducts = async () => {
     try {
       setLoading(true);
@@ -16,6 +18,7 @@ const LoadMoreData = () => {
         }`
       );
       const result = await response.json();
+
       if (result && result.products && result.products.length) {
         setProducts((prevData) => [...prevData, ...result.products]);
         setLoading(false);
@@ -41,24 +44,38 @@ const LoadMoreData = () => {
       </div>
     );
   }
-
   return (
     <div className="load-more-container">
+      {/* Main heading for the product gallery */}
       <h2 className="gallery-header">Product Gallery</h2>
+
+      {/* Responsive grid container for products */}
       <div className="product-container">
         {products && products.length
           ? products.map((item, index) => (
+              /* Individual product card with unique key */
               <div className="product" key={`${item.id}-${index}`}>
+                {/* Product thumbnail image */}
                 <img src={item.thumbnail} alt={item.title} />
+
+                {/* Product title */}
                 <p>{item.title}</p>
               </div>
             ))
           : null}
       </div>
+
+      {/* Load more controls section */}
       <div className="button-container">
-        <button disabled={disableButton} onClick={() => setCount(count + 1)}>
+        {/* Load more button - disabled when limit reached */}
+        <button
+          disabled={disableButton}
+          onClick={() => setCount(count + 1)} // Increment count to trigger next batch
+        >
           Load More Products
         </button>
+
+        {/* Limit reached message */}
         {disableButton ? <p>You have reached 100 products</p> : null}
       </div>
     </div>
