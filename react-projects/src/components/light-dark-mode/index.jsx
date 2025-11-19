@@ -12,13 +12,16 @@ const LightDarkMode = () => {
 
   return (
     // Theme is applied only to this container via data-theme attribute
-    <div className="light-dark-mode" data-theme={theme}>
-      <h2>Light Mode - Dark Mode</h2>
-      <div className="container">
-        <p>Hello World!</p>
-        <button className="theme-btn" onClick={handleToggleTheme}>
-          Change Theme
-        </button>
+
+    <div className="wrapper">
+        <h2>Light Mode - Dark Mode</h2>
+      <div className="light-dark-mode" data-theme={theme}>
+        <div className="container">
+          <p>Hello World!</p>
+          <button className="theme-btn" onClick={handleToggleTheme}>
+            Change Theme
+          </button>
+        </div>
       </div>
     </div>
   );
