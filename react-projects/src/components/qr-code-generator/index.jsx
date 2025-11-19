@@ -10,6 +10,7 @@ const QRGenerator = () => {
   // Generate QR code from input text
   const handleGenerateQrCode = () => {
     setQrCode(input);
+    setInput("");
   };
 
   return (
@@ -22,6 +23,7 @@ const QRGenerator = () => {
           onChange={(e) => setInput(e.target.value)}
           type="text"
           name="qr-code"
+          value={input}
           placeholder="Enter your value here"
         />
         <button
