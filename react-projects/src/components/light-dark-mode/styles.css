@@ -1,0 +1,80 @@
+.light-dark-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  /* Default light theme */
+  background-color: #f8f9fa;
+  color: #333;
+  border: 2px solid #e9ecef;
+}
+
+.light-dark-mode h2 {
+  margin: 0 0 2rem 0;
+}
+
+.light-dark-mode .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.light-dark-mode .container p {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  min-width: 200px;
+}
+
+.light-dark-mode .theme-btn {
+  padding: 4px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #6461ad;
+  color: #333;
+  /* Fit text with minimal padding */
+  width: fit-content;
+}
+
+.light-dark-mode .theme-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(100, 97, 173, 0.3);
+  background: #5a57a0;
+  color: #333;
+}
+
+/* Dark theme styles */
+.light-dark-mode[data-theme="dark"] {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-color: #333;
+}
+
+.light-dark-mode[data-theme="dark"] .container p {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.light-dark-mode[data-theme="dark"] .theme-btn {
+  background: #764ba2;
+  color: white;
+}
+
+.light-dark-mode[data-theme="dark"] .theme-btn:hover {
+  background: #667eea;
+  box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+}
